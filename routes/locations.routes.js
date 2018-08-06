@@ -1,11 +1,11 @@
 const express = require('express')
-const router = express.Router()
+const locations = express.Router()
 const locationsController = require('../controllers/locations.controller')
 
-router.get('locations/', locationsController.getLocations)
-router.post('locations/', locationsController.createLocation)
-router.get('locations/:id', locationsController.getLocation)
-router.put('locations/:id', locationsController.updateLocation)
-router.delete('locations/:id', locationsController.deleteLocation)
+locations.get('/', locationsController.getLocations)
+locations.post('/', locationsController.createLocation)
+locations.get('/:id', locationsController.getLocation)
+locations.put('/:id', locationsController.updateLocation)
+locations.delete('/:id', locationsController.deleteLocation)
 
-module.exports = router
+module.exports = locations
