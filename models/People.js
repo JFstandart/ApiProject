@@ -1,6 +1,19 @@
+/**
+ * mongodb ORM
+ * @module mongoose
+ */
 const mongoose = require('mongoose')
+
+/**
+ * People collection structure
+ * @type {Schema}
+ */
 const {Schema} = mongoose
 
+/**
+ * People collection structure
+ * @type {Schema}
+ */
 const PeopleSchema = new Schema({
   name: {
     type: String,

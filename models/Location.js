@@ -1,6 +1,19 @@
+/**
+ * mongodb ORM
+ * @module mongoose
+ */
 const mongoose = require('mongoose')
+
+/**
+ * Location collection structure
+ * @type {Schema}
+ */
 const {Schema} = mongoose
 
+/**
+ * Location collection structure
+ * @type {Schema}
+ */
 const LocationSchema = new Schema({
   name: {
     type: String,

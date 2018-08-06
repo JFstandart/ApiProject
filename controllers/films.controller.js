@@ -1,12 +1,34 @@
+/**
+ * Film model
+ * @module Film
+ */
 const Film = require('../models/Film')
 
+/**
+ * Film Controller Object
+ * @type {Object}
+ */
 const filmsController = {}
 
+/**
+ * show Film collection
+ * @method getFilms
+ * @param  {object}  req request
+ * @param  {object}  res response
+ * @return {Promise}
+ */
 filmsController.getFilms = async (req, res) => {
   let allFilms = await Film.find()
   res.json(allFilms)
 }
 
+/**
+ * Create a new Film
+ * @method createFilm
+ * @param  {object}   req request
+ * @param  {object}   res response
+ * @return {Promise}
+ */
 filmsController.createFilm = async (req, res) => {
   try {
     let newFilm = await new Film(req.body)
@@ -17,11 +39,25 @@ filmsController.createFilm = async (req, res) => {
   }
 }
 
+/**
+ * Show a Film
+ * @method getFilm
+ * @param  {object}  req request
+ * @param  {object}  res response
+ * @return {Promise}
+ */
 filmsController.getFilm = async (req, res) => {
   let SeeFilm = await Film.findById(req.params.id)
   res.json(SeeFilm)
 }
 
+/**
+ * Update a Film
+ * @method updateFilm
+ * @param  {object}  req request
+ * @param  {object}  res response
+ * @return {Promise}
+ */
 filmsController.updateFilm = async (req, res) => {
   let UpdatedFilm = {
     name: req.body.name,
@@ -44,9 +80,20 @@ filmsController.updateFilm = async (req, res) => {
   res.json({status: 'Updated successfully'})
 }
 
+/**
+ * Delete a Film
+ * @method deleteFilm
+ * @param  {object}  req request
+ * @param  {object}  res response
+ * @return {Promise}
+ */
 filmsController.deleteFilm = async (req, res) => {
   await Film.findByIdAndDelete(req.params.id)
   res.json({status: 'Deleted successfully'})
 }
 
+/**
+ * Export the Film controller
+ * @type {object}
+ */
 module.exports = filmsController
