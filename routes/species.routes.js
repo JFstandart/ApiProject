@@ -1,11 +1,11 @@
 const express = require('express')
-const router = express.Router()
+const species = express.Router()
 const speciesController = require('../controllers/species.controller')
 
-router.get('species/', speciesController.getAllSpecies)
-router.post('species/', speciesController.createSpecies)
-router.get('species/:id', speciesController.getSpecies)
-router.put('species/:id', speciesController.updateSpecies)
-router.delete('species/:id', speciesController.deleteSpecies)
+species.get('/', speciesController.getAllSpecies)
+species.post('/', speciesController.createSpecies)
+species.get('/:id', speciesController.getSpecies)
+species.put('/:id', speciesController.updateSpecies)
+species.delete('/:id', speciesController.deleteSpecies)
 
-module.exports = router
+module.exports = species
