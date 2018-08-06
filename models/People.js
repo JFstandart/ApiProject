@@ -36,12 +36,10 @@ const PeopleSchema = new Schema({
     required: true
   },
   films: {
-    type: Array,
-    required: true
+    type: Array
   },
   species: {
-    type: String,
-    required: true
+    type: Array
   },
   url: {
     type: String,

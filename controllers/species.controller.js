@@ -31,15 +31,15 @@ speciesController.getAllSpecies = async (req, res) => {
  */
 speciesController.createSpecies = async (req, res) => {
   try {
-      let newSpecies = await new Species(req.body)
-      await newSpecies.save()
-      res.json({status: 'Created successfully', object: newSpecies})
-    } catch (e) {
-      res.json({status: 'Error Creating', error: e})
-    }
+    let newSpecies = await new Species(req.body)
+    await newSpecies.save()
+    res.json({status: 'Created successfully', object: newSpecies})
+  } catch (e) {
+    res.json({status: 'Error Creating', error: e})
   }
+}
 
-  /**
+/**
    * Show a Species
    * @method getSpecies
    * @param  {object}  req request
@@ -47,8 +47,12 @@ speciesController.createSpecies = async (req, res) => {
    * @return {Promise}
    */
 speciesController.getSpecies = async (req, res) => {
-  let OneSpecies = await Species.findById(req.params.id)
-  res.json(OneSpecies)
+  try {
+    let OneSpecies = await Species.findById(req.params.id)
+    res.json(OneSpecies)
+  } catch (e) {
+    res.json({status: 'Error', error: e})
+  }
 }
 
 /**

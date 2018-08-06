@@ -32,12 +32,10 @@ const LocationSchema = new Schema({
     required: true
   },
   residents: {
-    type: Array,
-    required: true
+    type: Array
   },
   films: {
-    type: Array,
-    required: true
+    type: Array
   },
   url: {
     type: String,

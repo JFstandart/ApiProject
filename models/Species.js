@@ -32,12 +32,10 @@ const SpeciesSchema = new Schema({
     required: true
   },
   people: {
-    type: Array,
-    required: true
+    type: Array
   },
   films: {
-    type: Array,
-    required: true
+    type: Array
   },
   url: {
     type: String,

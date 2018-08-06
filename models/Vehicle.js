@@ -36,8 +36,7 @@ const VehicleSchema = new Schema({
     required: true
   },
   films: {
-    type: String,
-    required: true
+    type: Array
   },
   url: {
     type: String,

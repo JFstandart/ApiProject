@@ -47,8 +47,12 @@ locationsController.createLocation = async (req, res) => {
  * @return {Promise}
  */
 locationsController.getLocation = async (req, res) => {
-  let seeLocation = await Location.findById(req.params.id)
-  res.json(seeLocation)
+  try {
+    let seeLocation = await Location.findById(req.params.id)
+    res.json(seeLocation)
+  } catch (e) {
+    res.json({status: 'Error', error: e})
+  }
 }
 
 /**

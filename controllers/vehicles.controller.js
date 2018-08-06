@@ -31,15 +31,15 @@ vehiclesController.getVehicles = async (req, res) => {
  */
 vehiclesController.createVehicle = async (req, res) => {
   try {
-      let newVehicle = await new Vehicle(req.body)
-      await newVehicle.save()
-      res.json({status: 'Created successfully', object: newVehicle})
-    } catch (e) {
-      res.json({status: 'Error Creating', error: e})
-    }
+    let newVehicle = await new Vehicle(req.body)
+    await newVehicle.save()
+    res.json({status: 'Created successfully', object: newVehicle})
+  } catch (e) {
+    res.json({status: 'Error Creating', error: e})
   }
+}
 
-  /**
+/**
    * Show a Vehicle
    * @method getVehicle
    * @param  {object}  req request
@@ -49,6 +49,12 @@ vehiclesController.createVehicle = async (req, res) => {
 vehiclesController.getVehicle = async (req, res) => {
   let seeVehicle = await Vehicle.findById(req.params.id)
   res.json(seeVehicle)
+  try {
+    let seeVehicle = await Vehicle.findById(req.params.id)
+    res.json(seeVehicle)
+  } catch (e) {
+    res.json({status: 'Error Creating', error: e})
+  }
 }
 
 /**

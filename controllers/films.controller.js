@@ -47,8 +47,12 @@ filmsController.createFilm = async (req, res) => {
  * @return {Promise}
  */
 filmsController.getFilm = async (req, res) => {
-  let SeeFilm = await Film.findById(req.params.id)
-  res.json(SeeFilm)
+  try {
+    let SeeFilm = await Film.findById(req.params.id)
+    res.json(SeeFilm)
+  } catch (e) {
+    res.json({status: 'Error', error: e})
+  }
 }
 
 /**

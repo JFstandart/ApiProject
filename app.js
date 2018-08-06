@@ -28,7 +28,7 @@ const compression = require('compression')
  * Security HTTP hesaders
  * @module helmet
  */
-const helmet = require('helmet')
+// const helmet = require('helmet')
 
 /**
  * App configurations
@@ -42,7 +42,7 @@ const config = require('./config/config.js')
  */
 const {mongoose} = require('./config/database.js')
 
-// Use Modules
+// Middlewares
 
 /**
  * Use morgan paxkage
@@ -69,8 +69,6 @@ app.use(express.json())
  * @type {function}
  */
 // app.use(helmet())
-
-// Middlewares
 
 // Routes
 /**

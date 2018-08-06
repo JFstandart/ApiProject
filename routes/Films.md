@@ -10,16 +10,16 @@ En este apartado se indicará la documentacion del Endpoint para Films.
 - producer (productor) `String`
 - release_date (fecha de lanzamiento) `String`
 - rt_score (puntuacion de Rotten Tomato) `String`
-- people (personas) `Array`
-- species (especies) `Array`
-- locations (localizaciones) `Array`
+- people (personas) `Array` - Opcional
+- species (especies) `Array` - Opcional
+- locations (localizaciones) `Array` - Opcional
 - url (url) `String`
 
 ### Procesos
 
 #### URL: *api/films/* method: *GET*
 
-Retorna un array de objetos con todos los films almacenados en la base de datos
+Retorna un array de objetos con todos los filmes almacenados en la base de datos
 
 #### URL: *api/films/* method: *POST*
 
@@ -35,4 +35,4 @@ Recibe un id y un objeto, sustituye el documento en la base de datos del id corr
 
 #### URL: *api/films/:id* method: *DELETE*
 
-Recibe un id y lo elimina
+Recibe un id y lo elimina, retorna un mensaje de confirmación

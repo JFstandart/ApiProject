@@ -47,8 +47,12 @@ peopleController.createPeople = async (req, res) => {
    * @return {Promise}
    */
 peopleController.getPeople = async (req, res) => {
-  let OnePeople = await People.findById(req.params.id)
-  res.json(OnePeople)
+  try {
+    let OnePeople = await People.findById(req.params.id)
+    res.json(OnePeople)
+  } catch (e) {
+    res.json({status: 'Error', error: e})
+  }
 }
 
 /**
